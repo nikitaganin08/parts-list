@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <section>
+        <header class="header">
+          <div class="row">
+            <div class="col-md-4">
+              <h1>Parts of computer</h1>
+                <button type="button" class="btn btn-dark" (click)="reloadData()">All</button>
+                <button type="button" class="btn btn-dark" (click)="getRequiredPartsList(true)">Required</button>
+                <button type="button" class="btn btn-dark" (click)="getRequiredPartsList(false)">Option</button>
+            </div>
+            <div class="col-md-6">
+
+            </div>
+            <div class="col-md-2">
+            </div>
+          </div>
+
+        </header>
+      </section>
+
+      <section class="main">
+
+        <table class="table">
+          <thead>
+          <tr>
+            <th>#</th>
+            <th>Part name</th>
+            <th>Required</th>
+            <th>Quantity</th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let part of parts | paginate: {itemsPerPage:10, currentPage:p }">
+            <th scope="row">{{part.id}}</th>
+            <td>{{part.name}}</td>
+            <td>{{part.necessity == true ? 'Yes' : 'No'}}</td>
+            <td>{{part.quantity}}</td>
+            <td>
+              <button type="button" class="btn btn-success" (click)="updatePart(part)">Edit</button>
+              <button type="button" class="btn btn-danger" (click)="deletePart(part)">Delete</button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        <h4>You can assemble {{minPart}} {{minPart > 1 ? 'computers': 'computer'}}</h4>
+      </section>
+    </div>
+  </div>
+</div>

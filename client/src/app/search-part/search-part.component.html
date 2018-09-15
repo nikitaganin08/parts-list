@@ -1,0 +1,63 @@
+<h3>Search</h3>
+<div style="width: 300px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="partname">Enter part name</label>
+      <input type="text" class="form-control" id="partname" required [(ngModel)]="partname" name="partname">
+    </div>
+
+    <div class="btn-group">
+      <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+  </form>
+</div>
+<ul>
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <section>
+          <header class="header">
+            <div class="row">
+              <div class="col-md-6">
+
+              </div>
+              <div class="col-md-2">
+              </div>
+            </div>
+
+          </header>
+        </section>
+
+        <section class="main">
+
+          <table class="table">
+            <thead>
+            <tr *ngIf="part">
+              <th>#</th>
+              <th>Part name</th>
+              <th>Required</th>
+              <th>Quantity</th>
+              <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngIf="part">
+              <th scope="row">{{part.id}}</th>
+              <td>{{part.name}}</td>
+              <td>{{part.necessity}}</td>
+              <td>{{part.quantity}}</td>
+              <td>
+                <button type="button" class="btn btn-success" (click)="updatePart(part)">Edit</button>
+                <button type="button" class="btn btn-danger" (click)="deletePart(part)">Delete</button>
+              </td>
+            </tr>
+
+            </tbody>
+          </table>
+        </section>
+      </div>
+    </div>
+  </div>
+
+</ul>
