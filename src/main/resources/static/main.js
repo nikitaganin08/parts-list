@@ -440,7 +440,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var PartService = /** @class */ (function () {
     function PartService(http) {
         this.http = http;
-        this.baseUrl = 'http://parts-list.herokuapp.com/api/parts';
+        this.baseUrl = 'https://parts-list.herokuapp.com/api/parts';
     }
     PartService.prototype.getPart = function (id) {
         return this.http.get(this.baseUrl + "/" + id);
