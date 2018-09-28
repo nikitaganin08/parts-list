@@ -5,8 +5,8 @@ import { CreatePartComponent } from './create-part/create-part.component';
 import { SearchPartComponent } from './search-part/search-part.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'part', pathMatch: 'full' },
-  { path: 'part', component: PartListComponent },
+  { path: '', redirectTo: '', pathMatch: 'full' },
+  { path: '', component: PartListComponent },
   { path: 'add', component: CreatePartComponent },
   { path: 'search', component: SearchPartComponent},
   { path: 'edit/:id', component: CreatePartComponent},

@@ -50,8 +50,8 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 var routes = [
-    { path: '', redirectTo: 'part', pathMatch: 'full' },
-    { path: 'part', component: _part_list_part_list_component__WEBPACK_IMPORTED_MODULE_2__["PartListComponent"] },
+    { path: '', redirectTo: '', pathMatch: 'full' },
+    { path: '', component: _part_list_part_list_component__WEBPACK_IMPORTED_MODULE_2__["PartListComponent"] },
     { path: 'add', component: _create_part_create_part_component__WEBPACK_IMPORTED_MODULE_3__["CreatePartComponent"] },
     { path: 'search', component: _search_part_search_part_component__WEBPACK_IMPORTED_MODULE_4__["SearchPartComponent"] },
     { path: 'edit/:id', component: _create_part_create_part_component__WEBPACK_IMPORTED_MODULE_3__["CreatePartComponent"] },
